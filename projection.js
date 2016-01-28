@@ -1,7 +1,10 @@
 //经纬度转墨卡托
 function lngLat2Mercator(lnglat) {
+    lnglat.x = parseFloat(lnglat.x);
+    lnglat.y = parseFloat(lnglat.y);
     var x = lnglat.x * 20037508.34 / 180;
     var y = Math.log(Math.tan((90 + lnglat.y) * Math.PI / 360)) / (Math.PI / 180);
+
     y = y * 20037508.34 / 180;
     return {
         x: x,
